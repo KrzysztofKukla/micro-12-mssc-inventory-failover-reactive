@@ -1,6 +1,14 @@
 spring:
   application:
     name: micro-12-mssc-inventory-failover-reactive
+  #distributed tracing server
+  zipkin:
+    baseUrl: http://localhost:9411
+  cloud:
+    discovery:
+      #enable Eureka Discovery Client
+      enabled: true
+
 
 server:
   port: 8083

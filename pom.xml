@@ -11,12 +11,13 @@
 	<groupId>pl.kukla.krzys</groupId>
 	<artifactId>micro-12-mssc-inventory-failover-reactive</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>Inventory failover</name>
+	<name>micro-12-mssc-inventory-failover-reactive</name>
 	<description>Inventory failover in Reactive Spring</description>
 
 	<properties>
 		<java.version>11</java.version>
 		<spring-cloud.version>Hoxton.SR4</spring-cloud.version>
+		<logstash-logback-encoder.version>6.3</logstash-logback-encoder.version>
 	</properties>
 
 	<dependencies>
@@ -28,6 +29,20 @@
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+		</dependency>
+
+		<!-- Spring Cloud Sleuth/Zipkin for Distributing tracing Server -->
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-zipkin</artifactId>
+		</dependency>
+
+		<!-- logstash allows to grab ( chwytać ) logfiles and move them to logging server -->
+		<!-- in this case used to JSON encoding -->
+		<dependency>
+			<groupId>net.logstash.logback</groupId>
+			<artifactId>logstash-logback-encoder</artifactId>
+			<version>${logstash-logback-encoder.version}</version>
 		</dependency>
 
 		<dependency>
